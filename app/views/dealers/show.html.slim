@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @dealer.name
+p
+  strong Path:
+  = @dealer.path
+p
+  strong Status:
+  = @dealer.status
+
+= link_to 'Edit', edit_dealer_path(@dealer)
+'|
+= link_to 'Back', dealers_path
