@@ -4,4 +4,8 @@ class Dealer < ActiveRecord::Base
       dealer.update_attribute(:status, '')
     end
   end
+
+  def self.failed_dealers
+    where().not(status: '200 OK ').map(&:name)
+  end
 end
