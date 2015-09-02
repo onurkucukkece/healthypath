@@ -8,7 +8,8 @@ class DealersWorker
     dealers = Dealer.all.each do |dealer|
       uri = URI.parse("http://www.hotspring.co.uk/dealers/#{dealer.path}")
       response = Net::HTTP.get_response(uri)
-      dealer.update_attribute(:status, response.inspect)
+      status = response.inspect.match(/\w+[0-9] [a-zA-Z ]+ /)
+      dealer.update_attribute(:status, status)
     end
   end
 end
