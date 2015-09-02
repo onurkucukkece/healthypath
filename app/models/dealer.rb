@@ -1,10 +1,7 @@
 class Dealer < ActiveRecord::Base
-
-  def self.health_check
+  def self.empty_statuses
     all.each do |dealer|
-      http = Net::HTTP.new("www.hotspring.co.uk/")
-      response = http.request_head('/')
-      dealer.update_attribute(:status, response.status)
+      dealer.update_attribute(:status, '')
     end
   end
 end
