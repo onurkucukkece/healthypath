@@ -40,6 +40,10 @@ gem 'foreman'
 gem 'sidekiq'
 gem 'sidekiq-status'
 gem 'sinatra', :require => nil
+gem 'capistrano',  '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-rvm'
+gem 'capistrano3-puma'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
