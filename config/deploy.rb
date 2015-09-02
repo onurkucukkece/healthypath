@@ -45,7 +45,7 @@ namespace :foreman do
     on roles(:app) do
       within release_path do
         as :istateasedev do
-          execute "cd /var/www/html/healthypath/current && /home/istateasedev/.rvm/wrappers/ruby-2.2.1@global/bundle exec foreman export supervisord /etc/supervisor/conf.d \
+          execute "cd /var/www/html/healthypath/current && /home/istateasedev/.rvm/wrappers/ruby-2.2.1/bundle exec foreman export supervisord /etc/supervisor/conf.d \
             -f ./Procfile \
             -e /var/www/html/healthypath/production.env \
             -a #{fetch(:application)} \
