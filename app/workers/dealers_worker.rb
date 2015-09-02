@@ -4,10 +4,11 @@ class DealersWorker
   # sidekiq_options retry: false
   
   def perform()
+    Dealer.empty_statuses
     dealers = Dealer.all.each do |dealer|
-      http = Net::HTTP.new("www.hotspring.co.uk/dealers#{dealer.path}")
-      response = http.request_head('/')
-      dealer.update_attribute(:status, response.status)
+      uri = URI.parse("http://www.hotspring.co.uk/dealers/#{dealer.path}")
+      response = Net::HTTP.get_response(uri)
+      dealer.update_attribute(:status, response.inspect)
     end
   end
 end
