@@ -6,7 +6,7 @@
 # Example:
 #
 every 1.minute do
-  runner "Dealer.health_check"
+  runner "DealersWorker.perform_async()"
 end
 
 # every 4.days do
