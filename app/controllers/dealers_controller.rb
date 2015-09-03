@@ -1,6 +1,6 @@
 class DealersController < ApplicationController
   before_action :set_dealer, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /dealers
   # GET /dealers.json
   def index
