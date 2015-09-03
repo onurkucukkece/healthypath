@@ -8,7 +8,7 @@ class Dealer < ActiveRecord::Base
 
   def self.failed_dealers
     where().not(status: '200 OK ').map do |dealer|
-      [dealer.name, dealer.status]
+      [dealer.name, dealer.status, dealer.website]
     end
   end
 end
