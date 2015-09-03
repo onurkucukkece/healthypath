@@ -1,0 +1,7 @@
+- if notice || alert
+  .row.fullWidth
+    .small-12
+      div id="mainAlert1" class="alert-box" role="dialogalert" data-alert="true"
+        = notice ? sanitize(notice) : sanitize(alert)
+        = link_to '#', class: 'close' do
+          | &times;
