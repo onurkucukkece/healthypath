@@ -41,6 +41,7 @@ set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 set :rvm_ruby_version, '2.2.1'
 set :rvm_roles, [:app]
 set :rvm_type, :user
+set :assets_roles, [:app]
 
 namespace :foreman do
   desc "Export the Procfile to Supervisor scripts"
