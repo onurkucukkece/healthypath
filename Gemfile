@@ -42,6 +42,7 @@ gem 'sidekiq-status'
 gem 'sinatra', :require => nil
 gem 'therubyracer'
 gem 'devise'
+gem 'rails_12factor', group: :production
 gem 'capistrano',  '~> 3.4.0'
 gem 'capistrano-rails', '~> 1.1.3'
 gem 'capistrano-rvm'
