@@ -20,13 +20,15 @@ body
       td width="50%" align="right" valign="middle" = s3_image_tag 'logo-istatease.png'
     tr
       td colspan="2" align="left" valign="top"
-        p Unhealthy URLs
-        table width="100%" border="0"
-          - @dealers.each do |dealer|
-            tr
-              td = dealer[0]
-              td = dealer[1]
-              td = dealer[2]
+        p Hi,
+        p You have received this e-mail because the following dealers URLs below seems to be not working.
+        p
+          table width="100%" border="0"
+            - @dealers.each do |dealer|
+              tr
+                td = dealer[0]
+                td = dealer[1]
+                td = dealer[2]
     tr
       td colspan="2" align="left" valign="top"
         p
