@@ -76,4 +76,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.default_url_options = { host: 'healthypath.istweb.biz' }
+  config.action_mailer.asset_host = 'https://healthypath.istweb.biz' 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              "smtp.office365.com",
+    port:                 587,
+    domain:               'istweb.biz',
+    user_name:            ENV['MAIL_USERNAME'],
+    password:             ENV['MAIL_PASSWORD'],
+    authentication:       :login,
+    enable_starttls_auto: true
+  }
 end
