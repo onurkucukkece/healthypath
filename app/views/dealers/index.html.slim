@@ -17,7 +17,7 @@ table
         td = dealer.name
         td = dealer.path
         td = dealer.status
-        td = dealer.updated_at.localtime
+        td = dealer.updated_at.in_time_zone('Brussels').strftime('%d %b, %H:%M %Z')
         td = link_to 'Show', dealer
         td = link_to 'Edit', edit_dealer_path(dealer)
         td = link_to 'Destroy', dealer, data: {:confirm => 'Are you sure?'}, :method => :delete
