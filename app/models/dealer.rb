@@ -6,6 +6,8 @@ class Dealer < ActiveRecord::Base
   end
 
   def self.failed_dealers
-    where().not(status: '200 OK ').map(&:name)
+    where().not(status: '200 OK ').map do |dealer|
+      [dealer.name, dealer.status]
+    end
   end
 end
