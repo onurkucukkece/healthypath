@@ -1,6 +1,6 @@
 class DealerMailer < ActionMailer::Base
   helper :application
-  default from: "Watins Istatease <watkins@istatease.com>"
+  default from: "Watkins Istatease <watkins@istatease.com>"
 
   def failed_path(dealers)
     @dealers = dealers
