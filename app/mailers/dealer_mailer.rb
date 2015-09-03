@@ -4,6 +4,6 @@ class DealerMailer < ActionMailer::Base
 
   def failed_path(dealers)
     @dealers = dealers
-    mail(to: "Onur Kucukkece <onur.kucukkece@gmail.com>", subject: "Unhealthy dealer URLs")
+    mail(to: User.all_user_mails, subject: "Unhealthy dealer URLs")
   end
 end
