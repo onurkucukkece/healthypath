@@ -5,6 +5,7 @@ table
     tr
       th Name
       th Path
+      th Website
       th Status
       th Last Updated
       th
@@ -16,6 +17,7 @@ table
       tr
         td = dealer.name
         td = dealer.path
+        td = dealer.website
         td = dealer.status
         td = dealer.updated_at.in_time_zone('Brussels').strftime('%d %b, %H:%M %Z')
         td = link_to 'Show', dealer

@@ -13,6 +13,6 @@
     = f.label :path
     = f.text_field :path, placeholder: 'ex: hotspring-world-norwich'
   .field
-    = f.label :status
-    = f.text_field :status
-  .actions = f.submit
+    = f.label :website
+    = f.select(:website, options_for_select(Dealer::WEBSITES,@dealer.website))
+  .actions = f.submit 'Create/Update', class: 'tiny button secondary'
