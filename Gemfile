@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails'
-gem 'foundation-rails', '5.4.5'
+gem 'foundation-rails'
 gem 'puma'
 gem 'whenever'
 gem 'foreman'

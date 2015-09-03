@@ -265,7 +265,7 @@ DEPENDENCIES
   capistrano3-puma
   coffee-rails (~> 4.1.0)
   foreman
-  foundation-rails (= 5.4.5)
+  foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
   pg
