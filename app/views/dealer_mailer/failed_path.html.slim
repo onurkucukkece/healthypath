@@ -21,9 +21,11 @@ body
     tr
       td colspan="2" align="left" valign="top"
         p Unhealthy URLs
-        ul
+        table width="100%" border="0"
           - @dealers.each do |dealer|
-            li = dealer
+            tr
+              td = dealer[0]
+              td = dealer[1]
     tr
       td colspan="2" align="left" valign="top"
         p
