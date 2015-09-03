@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+  
+  resources :dealers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'dealers#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

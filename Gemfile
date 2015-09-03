@@ -33,8 +33,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails'
-gem 'foundation-rails', '5.4.5'
+gem 'foundation-rails'
 gem 'puma'
+gem 'whenever'
+gem 'foreman'
+gem 'sidekiq'
+gem 'sidekiq-status'
+gem 'sinatra', :require => nil
+gem 'therubyracer'
+gem 'devise'
+gem 'capistrano',  '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-rvm'
+gem 'capistrano3-puma'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
