@@ -4,7 +4,6 @@ table
   thead
     tr
       th Name
-      th Path
       th Website
       th Status
       th Last Updated
@@ -15,14 +14,13 @@ table
   tbody
     - @dealers.each do |dealer|
       tr
-        td = dealer.name
-        td = dealer.path
-        td = dealer.website
-        td = dealer.status
-        td = dealer.updated_at.in_time_zone('Brussels').strftime('%d %b, %H:%M %Z')
-        td = link_to 'Show', dealer
-        td = link_to 'Edit', edit_dealer_path(dealer)
-        td = link_to 'Destroy', dealer, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td width="30%" = dealer.name
+        td width="20%" = dealer.website
+        td width="15%" = dealer.status
+        td width="20%" = dealer.updated_at.in_time_zone('Brussels').strftime('%d %b, %H:%M %Z')
+        td width="5%" = link_to 'Show', dealer
+        td width="5%" = link_to 'Edit', edit_dealer_path(dealer)
+        td width="5%" = link_to 'Destroy', dealer, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
