@@ -38,6 +38,7 @@ set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+set :rvm_ruby_version, '2.2.1'
 
 namespace :foreman do
   desc "Export the Procfile to Supervisor scripts"
