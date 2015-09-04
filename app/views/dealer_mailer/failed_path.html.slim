@@ -21,19 +21,19 @@ body
     tr
       td colspan="2" align="left" valign="top"
         p Hi,
-        p You have received this e-mail because the following dealers URLs below seems to be not working.
+        p You have received this e-mail because the following dealer URL(s) below seems to be not working.
         p
           table width="100%" border="0"
             thead
               tr
                 th align="left" Name
-                th align="left" Website
+                th align="left" URL
                 th align="left" Status
             tbody
               - @dealers.each do |dealer|
                 tr
                   td = dealer[0]
-                  td = dealer[2]
+                  td = "<a href='http://#{dealer[2]}/dealers/#{dealer[3]}'>http://#{dealer[2]}/dealers/#{dealer[3]}</a>".html_safe
                   td = dealer[1]
     tr
       td colspan="2" align="left" valign="top"

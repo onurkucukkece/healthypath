@@ -29,7 +29,7 @@ set :pty, true
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'public/system')
 
 set :whenever_environment,  ->{ fetch :rails_env, fetch(:stage, "production") }
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
@@ -39,10 +39,6 @@ set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 set :rvm_ruby_version, '2.2.1'
-set :rvm_roles, [:app]
-set :rvm_type, :user
-set :assets_role, [:app]
-set :user, 'istateasedev'
 
 namespace :foreman do
   desc "Export the Procfile to Supervisor scripts"
