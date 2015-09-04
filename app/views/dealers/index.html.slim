@@ -13,7 +13,7 @@ table
 
   tbody
     - @dealers.each do |dealer|
-      - class_name = dealer.status.gsub(/([0-9]+ )/, '').parameterize
+      - class_name = dealer.status.present? ? dealer.status.gsub(/([0-9]+ )/, '').parameterize : ''
       tr
         td width="25%" = dealer.name
         td width="20%" = dealer.website
