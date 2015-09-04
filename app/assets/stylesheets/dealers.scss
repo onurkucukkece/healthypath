@@ -8,3 +8,7 @@
 .not-found{
   background: left center no-repeat url(https://s3.eu-central-1.amazonaws.com/watkins-prod/assets/sign-error.png);
 }
+
+.field_with_errors{
+  display:inherit !important;
+}
