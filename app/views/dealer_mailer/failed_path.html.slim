@@ -33,7 +33,7 @@ body
               - @dealers.each do |dealer|
                 tr
                   td = dealer[0]
-                  td = "<a href='http://#{dealer[2]}/dealers/#{dealer[3]}'>http://#{dealer[2]}/dealers/#{dealer[3]}</a>"
+                  td = "<a href='http://#{dealer[2]}/dealers/#{dealer[3]}'>http://#{dealer[2]}/dealers/#{dealer[3]}</a>".html_safe
                   td = dealer[1]
     tr
       td colspan="2" align="left" valign="top"
