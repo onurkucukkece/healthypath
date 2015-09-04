@@ -12,6 +12,6 @@ class DealersWorker
       dealer.update_attribute(:status, status)
     end
     failed_dealers = Dealer.failed_dealers
-    DealerMailer.failed_path(failed_dealers).deliver_later if failed_dealers
+    DealerMailer.failed_path(failed_dealers).deliver_later if failed_dealers.length > 0
   end
 end
