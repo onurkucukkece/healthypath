@@ -5,7 +5,7 @@
 
 # Example:
 #
-every :hour, roles: [:app] do
+every 5.minutes, roles: [:app] do
   runner "DealersWorker.perform_async()"
 end
 
