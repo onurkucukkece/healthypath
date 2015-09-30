@@ -30,7 +30,7 @@ set :pty, true
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'public/system')
-
+set :default_env, { 'HEALTHYPATH_DATABASE_PASSWORD' => "maWuhuxuha5w" }
 set :whenever_environment,  ->{ fetch :rails_env, fetch(:stage, "production") }
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 # Default value for default_env is {}
@@ -46,11 +46,11 @@ namespace :foreman do
     on roles(:app) do
       within release_path do
         as :istateasedev do
-          execute "cd /var/www/html/healthypath/current && /home/istateasedev/.rvm/wrappers/ruby-2.2.1/bundle exec foreman export supervisord /etc/supervisor/conf.d \
+          execute "cd /var/www/apps/healthypath/current && /home/istateasedev/.rvm/wrappers/ruby-2.2.1/bundle exec foreman export supervisord /etc/supervisor/conf.d \
             -f ./Procfile \
-            -e /var/www/html/healthypath/production.env \
+            -e /var/www/apps/healthypath/production.env \
             -a #{fetch(:application)} \
-            -u istateasedev -l /var/www/html/healthypath/shared/log"
+            -u istateasedev -l /var/www/apps/healthypath/shared/log"
         end
       end
     end
