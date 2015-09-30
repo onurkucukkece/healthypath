@@ -298,7 +298,6 @@ DEPENDENCIES
   sinatra
   slim-rails
   spring
-  sprockets-rails
   therubyracer
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
