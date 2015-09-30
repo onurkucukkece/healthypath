@@ -1,3 +1,3 @@
-web: /home/istateasedev/.rvm/wrappers/ruby-2.2.1/bundle exec puma -C config/puma.rb
+web: /usr/local/rvm/gems/ruby-2.1.2/wrappers/bundle exec puma -C config/puma.rb
 redis: redis-server /etc/redis-healthypath.conf
-sidekiq: /home/istateasedev/.rvm/wrappers/ruby-2.2.1/bundle exec sidekiq -e production -C config/sidekiq.yml
+sidekiq: /usr/local/rvm/gems/ruby-2.1.2/wrappers/bundle exec sidekiq -e production -C config/sidekiq.yml
