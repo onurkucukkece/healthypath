@@ -45,7 +45,7 @@ gem 'capistrano',  '3.3.5'
 gem 'capistrano-rails',  '1.1.2'
 gem 'capistrano-rvm'
 gem 'capistrano3-puma'
-
+gem 'sprockets', '~> 2.8'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
