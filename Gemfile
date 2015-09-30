@@ -43,8 +43,8 @@ gem 'sinatra', :require => nil
 gem 'therubyracer'
 gem 'devise'
 gem 'rails_12factor', group: :production
-gem 'capistrano',  '~> 3.4.0'
-gem 'capistrano-rails', '~> 1.1.3'
+gem 'capistrano',  '3.3.5'
+gem 'capistrano-rails',  '1.1.2'
 gem 'capistrano-rvm'
 gem 'capistrano3-puma'
 
