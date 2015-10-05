@@ -24,7 +24,7 @@ set :deploy_to, "#{fetch(:deploy_to)}"
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/.env',)
+set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
 # Default value for linked_dirs is []
 set :whenever_environment,  ->{ fetch :rails_env, fetch(:stage, "production") }
