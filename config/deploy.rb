@@ -24,7 +24,7 @@ set :deploy_to, "#{fetch(:deploy_to)}"
 set :pty, true
 
 # Default value for :linked_files is []
-# set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
 # Default value for linked_dirs is []
 set :whenever_environment,  ->{ fetch :rails_env, fetch(:stage, "production") }
@@ -45,9 +45,9 @@ namespace :foreman do
     on roles(:app) do
       within release_path do
         as :istateasedev do
-          execute "cd /var/www/apps/healthypath/current && /usr/local/rvm/gems/ruby-2.2.1/wrappers/bundle exec foreman export supervisord /etc/supervisor/conf.d \
+          execute "cd /var/www/apps/healthypath/current && /usr/local/rvm/gems/ruby-2.2.1/wrappers/bundle exec foreman export supervisord /etc/supervisord/conf.d \
             -f ./Procfile \
-            -e /var/www/apps/healthypath/production.env \
+            -e /var/www/apps/healthypath/shared/config/.env \
             -a #{fetch(:application)} \
             -u istateasedev -l /var/www/apps/healthypath/shared/log"
         end
