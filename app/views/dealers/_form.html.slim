@@ -8,10 +8,10 @@
 
   .field
     = f.label :name
-    = f.text_field :name, placeholder: 'ex: Hotspring World Of Norwich' 
+    = f.text_field :name, placeholder: 'ex: Hotspring World Of Norwich'
   .field
-    = f.label :path
-    = f.text_field :path, placeholder: 'ex: hotspring-world-norwich'
+    = f.label :path, 'Full path'
+    = f.text_field :path, placeholder: 'ex: dealers/hotspring-world-norwich'
   .field
     = f.label :website
     = f.select(:website, options_for_select(Dealer::WEBSITES,@dealer.website), include_blank: 'Select a website')
