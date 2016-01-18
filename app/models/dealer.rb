@@ -1,6 +1,6 @@
 class Dealer < ActiveRecord::Base
   validates :name, :path, :website, presence: true
-  WEBSITES = %w(www.hotspring.co.uk www.calderaspas.co.uk)
+  WEBSITES = %w(www.hotspring.co.uk www.hotspring.fr www.hotspring.nl www.calderaspas.co.uk www.calderaspas.fr www.calderaspas.de www.calderaspas.at www.calderaspas.ch www.calderaspas.se www.calderaspas.nl)
   def self.empty_statuses
     all.each do |dealer|
       dealer.update_attribute(:status, '')
