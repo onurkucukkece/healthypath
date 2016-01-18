@@ -1,3 +1,2 @@
 web: puma -C config/puma.rb
-redis: redis-server
 sidekiq: bundle exec sidekiq -e development -C config/sidekiq.yml
