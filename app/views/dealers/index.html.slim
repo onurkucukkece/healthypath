@@ -6,6 +6,7 @@ table
       th Name
       th Website
       th Status
+      th Redirect to (301, 302)
       th Last Updated
       th
       th
@@ -15,10 +16,11 @@ table
     - @dealers.each do |dealer|
       - class_name = dealer.status.present? ? dealer.status.gsub(/([0-9]+ )/, '').parameterize : ''
       tr
-        td width="25%" = dealer.name
+        td width="20%" = dealer.name
         td width="20%" = dealer.website
-        td width="20%" class="#{class_name} text-right" = dealer.status
-        td width="20%" = dealer.updated_at.in_time_zone('Brussels').strftime('%d %b, %H:%M %Z')
+        td width="10%" class="a#{class_name} text-right" = dealer.status
+        td width="10%" = dealer.redirect
+        td width="15%" = dealer.updated_at.in_time_zone('Brussels').strftime('%d %b, %H:%M %Z')
         td width="5%" = link_to 'Show', dealer
         td width="5%" = link_to 'Edit', edit_dealer_path(dealer)
         td width="5%" = link_to 'Destroy', dealer, data: {:confirm => 'Are you sure?'}, :method => :delete

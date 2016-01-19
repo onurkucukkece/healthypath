@@ -15,4 +15,7 @@
   .field
     = f.label :website
     = f.select(:website, options_for_select(Dealer::WEBSITES,@dealer.website), include_blank: 'Select a website')
+  .field
+    = f.label :post, 'Use post method'
+    = f.check_box :post, value: true, checked: (@dealer.post == true ? true : 'false')
   .actions = f.submit 'Create/Update', class: 'tiny button secondary'
