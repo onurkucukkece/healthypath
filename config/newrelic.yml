@@ -1,0 +1,13 @@
+common: &default_settings
+  license_key: 9e764d3afc78386aa2dfa193e2c271d707690795
+
+  app_name: Healthypath
+
+  # To disable the agent regardless of other settings, uncomment the following:
+  # agent_enabled: false
+
+  # Logging level for log/newrelic_agent.log
+  log_level: info
+
+production:
+  <<: *default_settings
