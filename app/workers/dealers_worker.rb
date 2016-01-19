@@ -12,15 +12,17 @@ class DealersWorker
         params = CGI.parse(uri.query)
         uri.query = ''
         res = Net::HTTP.post_form(uri, params)
-        status = res.code
-
-        if status == '301' || status == '302'
-          status = get_request(URI.parse("#{res['location']}"))
-          redirect = res['location'].match(/#{dealer.website}\/(.*)/)[1] if res['location'].present?
-        end
       else
-        status = get_request(uri)
+        res = Net::HTTP.get_response(uri)
       end
+
+      status = res.inspect.match(/\w+[0-9] [a-zA-Z ]+ /)
+
+      if res['location'].present?
+        status = get_request(URI.parse("#{res['location']}"))
+        redirect = res['location'].match(/#{dealer.website}\/(.*)/)[1]
+      end
+
       dealer.update_attributes({status: status, redirect: redirect})
     end
     failed_dealers = Dealer.failed_dealers
