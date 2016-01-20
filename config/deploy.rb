@@ -47,7 +47,7 @@ namespace :foreman do
         as :istateasedev do
           execute "cd /var/www/apps/healthypath/current && /usr/local/rvm/gems/ruby-2.2.1/wrappers/bundle exec foreman export supervisord /etc/supervisord/conf.d \
             -f ./Procfile \
-            -e /var/www/apps/healthypath/shared/config/.env \
+            -e /var/www/apps/healthypath/shared/config/healthypath-production.env \
             -a #{fetch(:application)} \
             -u istateasedev -l /var/www/apps/healthypath/shared/log"
         end
