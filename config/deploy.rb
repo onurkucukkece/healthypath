@@ -1,6 +1,7 @@
 # config valid only for current version of Capistrano
-set :stages, %w(production)
 lock '3.4.0'
+
+set :stages, %w(production)
 
 set :application, 'healthypath'
 set :repo_url, 'git@bitbucket.org:istateasedev/healthypath.git'
