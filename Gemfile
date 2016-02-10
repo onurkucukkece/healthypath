@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'slim-rails'
 gem 'foundation-rails'
-gem 'puma'
+gem 'unicorn'
 gem 'whenever'
 gem 'foreman'
 gem 'sidekiq'
@@ -44,7 +44,6 @@ gem 'rails_12factor', group: :production
 gem 'capistrano', '~> 3.1'
 gem 'capistrano-rails', '1.1.2'
 gem 'capistrano-rvm'
-gem 'capistrano3-puma'
 gem 'sprockets', '~> 2.8'
 gem 'newrelic_rpm'
 group :development, :test do
