@@ -12,9 +12,10 @@
   .field
     = f.label :path, 'Full path'
     = f.text_field :path, placeholder: 'ex: dealers/hotspring-world-norwich'
+    i query params can be included if post is true
   .field
     = f.label :website
-    = f.select(:website, options_for_select(Dealer::WEBSITES,@dealer.website), include_blank: 'Select a website')
+    = f.text_field :website, placeholder: 'ex: www.domain.com'
   .field
     = f.label :post, 'Use post method'
     = f.check_box :post, value: true, checked: (@dealer.post == true ? true : 'false')
